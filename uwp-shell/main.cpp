@@ -12,6 +12,7 @@ int main(int, char**) {
 
 #include <winrt/base.h>
 #include <winrt/Windows.ApplicationModel.Core.h>
+#include <winrt/Windows.UI.Core.h>
 
 using namespace winrt;
 using namespace Windows::ApplicationModel::Core;
