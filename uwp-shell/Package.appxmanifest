@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10"
          xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest"
@@ -25,8 +26,12 @@
   </Resources>
 
   <Dependencies>
-    <TargetDeviceFamily Name="Windows.Desktop" MinVersion="10.0.22000.0" MaxVersionTested="10.0.22621.0" />
-    <TargetDeviceFamily Name="Windows.Xbox" MinVersion="10.0.22000.0" MaxVersionTested="10.0.22621.0" />
+    <TargetDeviceFamily Name="Windows.Desktop"
+                        MinVersion="10.0.22000.0"
+                        MaxVersionTested="10.0.22621.0" />
+    <TargetDeviceFamily Name="Windows.Xbox"
+                        MinVersion="10.0.22000.0"
+                        MaxVersionTested="10.0.22621.0" />
   </Dependencies>
 
   <Applications>
@@ -39,7 +44,7 @@
         Square44x44Logo="Assets\Square44x44Logo.png"
         Description="Runs native Win32 executables on Xbox"
         BackgroundColor="transparent">
-        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" >
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png">
         </uap:DefaultTile>
         <uap:SplashScreen Image="Assets\SplashScreen.png" />
       </uap:VisualElements>
@@ -52,4 +57,5 @@
     <Capability Name="internetClientServer" />
     <uap:Capability Name="removableStorage" />
   </Capabilities>
+
 </Package>
