@@ -37,7 +37,7 @@
   <Applications>
     <Application Id="App"
                  Executable="XboxWin32Runner.exe"
-                 EntryPoint="XboxWin32Runner.App">
+                 EntryPoint="Windows.App">
       <uap:VisualElements
         DisplayName="Xbox Win32 Runner"
         Square150x150Logo="Assets\Square150x150Logo.png"
