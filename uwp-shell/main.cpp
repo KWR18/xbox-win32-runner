@@ -1,11 +1,10 @@
 
 #include "UwpSdkIncludes.h"
-#include "App.h"
 
 #ifdef XWR_SYNTAX_CHECK
 
 int main(int, char**) {
-    return xwr::App::Main();
+    return 0;
 }
 
 #else
@@ -16,20 +15,32 @@ int main(int, char**) {
 
 using namespace winrt;
 using namespace Windows::ApplicationModel::Core;
+using namespace Windows::UI::Core;
 
-struct StartupView : implements<StartupView, IFrameworkViewSource, IFrameworkView> {
+struct StartupView :
+    implements<StartupView, IFrameworkViewSource, IFrameworkView> {
+
     IFrameworkView CreateView() {
         return *this;
     }
 
     void Initialize(CoreApplicationView const&) {}
-    void SetWindow(Windows::UI::Core::CoreWindow const& window) {
+
+    void SetWindow(CoreWindow const& window) {
         window.Activate();
     }
+
     void Load(hstring const&) {}
+
     void Run() {
-        xwr::App::Main();
+        CoreWindow window = CoreWindow::GetForCurrentThread();
+
+        while (true) {
+            window.Dispatcher().ProcessEvents(
+                CoreProcessEventsOption::ProcessOneAndAllPending);
+        }
     }
+
     void Uninitialize() {}
 };
 
